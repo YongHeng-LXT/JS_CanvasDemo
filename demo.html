@@ -10,9 +10,11 @@
             margin: 0;
         }
         canvas{
+            display: block;
             width: 1000px;
             height: 600px;
-            background-color: #ccc;
+            margin: 50px auto 0;
+            background-color:#ccc;
         }
     </style>
 </head>
@@ -20,8 +22,74 @@
     <canvas width="1000" height="600">你当前的浏览器版本过低，请使用新版本的浏览器！！！</canvas>
 
     <script>
-        let canvas=document.querySelector("canvas"),
-            canCon=canvas.getContext("2d");
+        let canvas=document.querySelector("canvas"),//获取canvas元素
+            canCon=canvas.getContext("2d");//获取可作画的区域
+            // canCon.globalAlpha=0.5;//设置接下来所有图形的透明度
+
+            // canCon.fillStyle="red";//拿起一只实心笔，沾上有颜色的墨水，颜色默认黑色
+            // canCon.arc(500,300,100,0,Math.PI*2);//画一个圆，圆心x,y坐标,圆的半径,圆角度的起点,圆角度的终点
+            // canCon.fill();//下笔作画
+
+            // canCon.fillRect(0,0,50,50);//直接画一个实心矩形，矩形左上角x,y坐标,矩形宽度,矩形高度
+
+            // canCon.strokeStyle="orange";//拿起一只空心笔，沾上有颜色的墨水，颜色默认黑色
+            // canCon.strokeRect(100,0,50,50);//直接画一个空心矩形，矩形左上角x,y坐标,矩形宽度,矩形高度
+
+            // canCon.clearRect(450,250,100,100);//清除出一个矩形区域，矩形左上角x,y坐标,矩形宽度,矩形高度
+
+            // canCon.beginPath();//开始一个路径
+            // canCon.moveTo(500,200);//移动笔的位置，x,y轴坐标
+            // canCon.lineTo(570,300);//画一条直线，终点的x,y轴坐标
+            // canCon.lineTo(430,300);
+            // canCon.closePath();//回到起始点，结束路径
+            // canCon.stroke();//下笔作画
+            
+            // canCon.beginPath();
+            // canCon.moveTo(500,200);
+            // canCon.arcTo(500,300,400,200,50);//画一个弧线，x1,y1,x2,y2,圆的半径
+            // canCon.stroke();
+
+            // canCon.lineWidth=5;//设置线的粗细，默认值为2
+            // canCon.lineCap="butt";//设置线两端的样式，默认为butt，round，两端圆形，square，两端加长
+            // canCon.lineJoin="miter";//设置线交汇处的样式，默认为miter，round，交汇处圆形，bevel，交汇处平整
+            // canCon.setLineDash([2,8]);//设置线段为虚线样式，参数为数组，指定线段与间隙的交替
+            // canCon.lineDashOffset=8;//设置虚线样式的偏移值
+
+            // canCon.shadowOffsetX=10;//设置阴影x偏移量
+            // canCon.shadowOffsetY=30;//设置阴影y偏移量
+            // canCon.shadowBlur=50;//设置阴影模糊半径
+            // canCon.shadowColor="#000";//设置阴影颜色
+
+            // canCon.beginPath();
+            // canCon.moveTo(500,200);
+            // //canCon.quadraticCurveTo(600,300,700,200);//绘制二次贝塞尔曲线，控制点x,控制点y,结束点x,结束点y
+            // canCon.bezierCurveTo(600,300,650,300,700,200);//绘制三次贝塞尔曲线，控制点1x,控制点1y,控制点2x,控制点2y,结束点x,结束点y
+            // canCon.lineTo(700,300);
+            // canCon.stroke();
+
+            // let lineGradient=canCon.createLinearGradient(100,100,100,200);//创建线性渐变，起始点x,起始点y,结束点x,结束点y
+            // lineGradient.addColorStop(0,"red");//设置线性渐变的点和颜色
+            // lineGradient.addColorStop(0.5,"orange");
+            // lineGradient.addColorStop(0.5,"black");
+            // lineGradient.addColorStop(1,"green");
+            // canCon.fillStyle=lineGradient;
+            // canCon.fillRect(100,100,100,100);
+
+            // let img=new Image();
+            // img.src="images/1.jpg";
+            // img.onload=function(){
+            //     let ptrn=canCon.createPattern(img,"no-repeat");//创建图片样式，img元素,是否平铺参数
+            //     canCon.fillStyle=ptrn;
+            //     canCon.fillRect(220,100,300,300);
+            // }
+
+            canCon.fillStyle="red";
+            canCon.beginPath();
+            canCon.arc(500,300,50,0,Math.PI*2);
+            canCon.arc(500,300,100,0,Math.PI*2);
+            canCon.arc(500,300,150,0,Math.PI*2);
+            canCon.fill("evenodd");//里面可以设置参数，默认为nonzero,evenodd为只画偶数
+            
     </script>
 </body>
 </html>
