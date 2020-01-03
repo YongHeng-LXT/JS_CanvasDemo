@@ -11,19 +11,24 @@
         }
         canvas{
             display: block;
-            width: 1000px;
-            height: 600px;
+            width: 720px;
+            height: 480px;
             margin: 50px auto 0;
             background-color:#ccc;
+        }
+        video{
+            display: none;
         }
     </style>
 </head>
 <body>
-    <canvas width="1000" height="600">你当前的浏览器版本过低，请使用新版本的浏览器！！！</canvas>
+    <video src="video/洛天依,音阙诗听 - 红昭愿（Cover：音阙诗听）.mp4" width="720" height="480" controls="true"></video>
+    <canvas width="720" height="480">你当前的浏览器版本过低，请使用新版本的浏览器！！！</canvas>
 
     <script>
         let canvas=document.querySelector("canvas"),//获取canvas元素
-            canCon=canvas.getContext("2d");//获取可作画的区域
+            canCon=canvas.getContext("2d"),//获取可作画的区域
+            video=document.querySelector("video");
             // canCon.globalAlpha=0.5;//设置接下来所有图形的透明度
 
             // canCon.fillStyle="red";//拿起一只实心笔，沾上有颜色的墨水，颜色默认黑色
@@ -83,13 +88,74 @@
             //     canCon.fillRect(220,100,300,300);
             // }
 
-            canCon.fillStyle="red";
-            canCon.beginPath();
-            canCon.arc(500,300,50,0,Math.PI*2);
-            canCon.arc(500,300,100,0,Math.PI*2);
-            canCon.arc(500,300,150,0,Math.PI*2);
-            canCon.fill("evenodd");//里面可以设置参数，默认为nonzero,evenodd为只画偶数
-            
+            // canCon.fillStyle="red";
+            // canCon.beginPath();
+            // canCon.arc(500,300,50,0,Math.PI*2);
+            // canCon.arc(500,300,100,0,Math.PI*2);
+            // canCon.arc(500,300,150,0,Math.PI*2);
+            // canCon.fill("evenodd");//里面可以设置参数，默认为nonzero,evenodd为奇填偶不填
+
+            // function star(ver){
+            //     // canCon.moveTo(ver1[0],ver1[1]);
+            //     // canCon.lineTo((ver2[0]-ver1[0])/2+ver1[0],ver2[1]);
+            //     // canCon.lineTo(ver2[0],ver2[1]);
+            //     // canCon.lineTo((ver2[0]-ver1[0])/2+ver1[0],(ver3[1]-ver2[1])/2+ver2[1]);
+            //     // canCon.lineTo(ver3[0],ver3[1]);
+            //     // canCon.lineTo((ver3[0]-ver4[0])/2+ver4[0],(ver4[1]-ver2[1])/4*3+ver2[1]);
+            //     // canCon.lineTo(ver4[0],ver4[1]);
+            //     // canCon.lineTo((ver1[0]-ver5[0])/2+ver5[0],(ver3[1]-ver2[1])/2+ver2[1]);
+            //     // canCon.lineTo(ver5[0],ver5[1]);
+            //     // canCon.lineTo((ver1[0]-ver5[0])/2+ver5[0],ver5[1]);
+            //     for(let i=0;i<5;i++){
+            //         canCon.beginPath();
+            //         let versc=canCon.createLinearGradient(ver[i][0],ver[i][1],ver[(i+2)%5][0],ver[(i+2)%5][1]);
+            //         versc.addColorStop(0,"red");
+            //         versc.addColorStop(0.4,"red");
+            //         versc.addColorStop(0.4,"rgba(0,0,0,0)");
+            //         versc.addColorStop(0.6,"rgba(0,0,0,0)");
+            //         versc.addColorStop(0.6,"red");
+            //         versc.addColorStop(1,"red");
+            //         canCon.strokeStyle=versc;
+            //         canCon.moveTo(ver[i][0],ver[i][1]);
+            //         canCon.lineTo(ver[(i+2)%5][0],ver[(i+2)%5][1]);
+            //         canCon.stroke();
+            //     }
+            // }
+            // star([[70,30],[125,70],[100,140],[30,140],[10,70],]);
+
+            // canCon.font="30px serif";//设置文字大小
+            // canCon.fillText("555",100,100,100);//画一个实心文字，要画的文字,文字基线位置x,y,最大文字宽度
+            // canCon.strokeText("555",100,300,100);//画一个空心文字，要画的文字,文字基线位置x,y,最大文字宽度
+
+            // let img=new Image();
+            // img.src="images/1.jpg";
+            // img.onload=function(){
+            //     canCon.drawImage(img,100,100,400,200,100,100,120,150);//画一个图片，图片元素,图片x位置,图片y位置,裁取宽度,裁取高度,x,y,显示宽度,显示高度
+            // }
+
+            // canCon.translate(100,100);//移动canvas的原点
+            // canCon.rotate(Math.PI/4);//旋转canvas的原点
+            // canCon.scale(0.5,0.5);//设置缩放
+
+            // canCon.globalCompositeOperation="source-over";//设置多个图形的遮盖规则，默认为source-over
+
+            // canCon.save();//保存canvas的样式设置
+            // canCon.restore();//读取最近一次保存的颜色数据，如果最近一次读取过，就找上一次保存的，以此类推
+
+            // video.addEventListener("play",function(){
+            //     videoPlay();
+            // })
+
+            // function videoPlay(){
+            //     if(video.paused || video.ended){
+            //         return
+            //     }
+            //     canCon.drawImage(video,0,0,720,480);
+            //     setInterval(function(){
+            //         videoPlay();
+            //     },1000/60);
+            // }
+
     </script>
 </body>
 </html>
